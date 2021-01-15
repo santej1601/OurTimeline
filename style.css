@@ -1,0 +1,1006 @@
+/*==========  Global  ==========*/
+/*==========  Basics  ==========*/
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #251941;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: #B9CFD0;
+  font-family: 'Roboto Slab', serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+a {
+  color: #B9CFD0;
+  text-decoration: none;
+  border-bottom: 1px solid #B9CFD0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Comfortaa', cursive;
+}
+/*==========  Sections  ==========*/
+.header {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background-image: linear-gradient(to bottom,#b583e2 0%, #6039bd 100%);
+}
+.header .master-head {
+  padding: 7% 30px;
+}
+.header .page-title {
+  padding: 0 30px 0 30px;
+  font-size: 60px;
+  line-height: 1em;
+  letter-spacing: 10px;
+  color: #FFF;
+}
+.header .page-description {
+  margin: 30px auto;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 2em;
+  color: #FFF;
+}
+.header .scroll-button {
+  color: #FFF;
+  font-size: 20px;
+  padding: 15px 20px 15px 20px;
+  display: inline-block;
+  background: #6613c0;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.header .scroll-button:hover {
+  background: #5610a0;
+}
+.header .scroll-button:active {
+  background: #6039bd;
+}
+.main-content {
+  margin: 0px auto;
+  position: relative;
+}
+.main-content .section-inner,
+.main-content .post-wrapper {
+  *zoom: 1;
+}
+.main-content .section-inner:before,
+.main-content .post-wrapper:before,
+.main-content .section-inner:after,
+.main-content .post-wrapper:after {
+  content: "";
+  display: table;
+}
+.main-content .section-inner:after,
+.main-content .post-wrapper:after {
+  clear: both;
+}
+.footer {
+  background: #251941;
+  padding: 150px 0px 300px 0px;
+  position: relative;
+  z-index: 1;
+}
+.footer .good-bye {
+  text-align: center;
+  font-size: 18px;
+  line-height: 36px;
+}
+.footer .good-bye p {
+  display: block;
+  margin: 0px auto 30px auto;
+  max-width: 300px;
+  clear: both;
+}
+.section .section-inner {
+  margin: 0px auto;
+  width: 1024px;
+}
+@media only screen {
+  .section .section-inner {
+    width: auto;
+    max-width: 1024px;
+  }
+}
+/*==========  Stem  ==========*/
+.stem-wrapper {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+}
+.stem-wrapper.color-yellow .stem-background {
+  background: #289ecc;
+}
+.stem-wrapper.color-green .stem-background {
+  background: #9d6bc7;
+}
+.stem-wrapper.color-white .stem-background {
+  background: rgb(115, 34, 122);
+}
+.stem-wrapper .stem,
+.stem-wrapper .stem-background {
+  position: absolute;
+  top: 0px;
+  left: -30px;
+  width: 60px;
+}
+.stem-wrapper .stem {
+  background: #36265a;
+  height: 100%;
+}
+.stem-wrapper .stem-background {
+  background: #6039bd;
+  height: 50%;
+  transition-duration: 0.5s;
+}
+.stem-padding,
+.single-stem-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0px auto;
+  background: transparent url(stem-mask.png) repeat-y top center;
+}
+.single-stem-icon.scroll-to-top {
+  cursor: pointer;
+  background-image: url(images/top.png);
+  background-size: contain;
+}
+/*==========  Post wrapper ==========*/
+.post-wrapper {
+  *zoom: 1;
+}
+.post-wrapper:before,
+.post-wrapper:after {
+  content: "";
+  display: table;
+}
+.post-wrapper:after {
+  clear: both;
+}
+.post-wrapper .post {
+  position: relative;
+  width: 432px;
+  padding: 0px 0px 60px 0px;
+  clear: both;
+  opacity: 1;
+  perspective: 1000px;
+}
+.post-wrapper .post.hidden .post-content {
+  transform: translateY(100px) rotateX(30deg);
+  opacity: 0;
+}
+.post-wrapper .post:hover .post-content,
+.post-wrapper .post.active .post-content {
+  opacity: 1;
+}
+.post-wrapper .post:hover .post-content .meta,
+.post-wrapper .post.active .post-content .meta {
+  opacity: 1;
+  transform: none;
+}
+.post-wrapper .post:nth-child(even) {
+  float: right;
+}
+.post-wrapper .post:nth-child(odd) {
+  float: left;
+}
+.post-wrapper .post:nth-child(even) .stem-overlay {
+  left: -110px;
+}
+.post-wrapper .post:nth-child(odd) .stem-overlay {
+  right: -110px;
+}
+.post-wrapper .post.start-icon .stem-overlay .icon {
+  background-image: url("images/start.png");
+  background-size: contain;
+}
+.post-wrapper .post.college-icon .stem-overlay .icon {
+  background-image: url(images/college.png);
+  background-size: contain;
+}
+.post-wrapper .post.whatsapp-icon .stem-overlay .icon {
+  background-image: url(images/whatsapp.png);
+  background-size: contain;
+}
+.post-wrapper .post.yr1-icon .stem-overlay .icon {
+  background-image: url(images/1yr.png);
+  background-size: contain;
+}
+.post-wrapper .post.bday-icon .stem-overlay .icon {
+  background-image: url(images/bday.png);
+  background-size: contain;
+}
+.post-wrapper .post.bf-icon .stem-overlay .icon {
+  background-image: url(images/bf.png);
+  background-size: contain;
+}
+.post-wrapper .post.cake-icon .stem-overlay .icon {
+  background-image: url(images/cake.png);
+  background-size: contain;
+}
+.post-wrapper .post.date-icon .stem-overlay .icon {
+  background-image: url(images/date.png);
+  background-size: contain;
+}
+.post-wrapper .post.hackathon-icon .stem-overlay .icon {
+  background-image: url(images/hackathon.png);
+  background-size: contain;
+}
+.post-wrapper .post.hug-icon .stem-overlay .icon {
+  background-image: url(images/hug.png);
+  background-size: contain;
+}
+.post-wrapper .post.movie-icon .stem-overlay .icon {
+  background-image: url(images/movie.png);
+  background-size: contain;
+}
+.post-wrapper .post.date-icon .stem-overlay .icon {
+  background-image: url(images/date.png);
+  background-size: contain;
+}
+.post-wrapper .post.star-icon .stem-overlay .icon {
+  background-image: url(images/star.png);
+  background-size: contain;
+}
+.post-wrapper .post.technovit-icon .stem-overlay .icon {
+  background-image: url(images/technovit.png);
+  background-size: contain;
+}
+.post-wrapper .post.under25-icon .stem-overlay .icon {
+  background-image: url("images/under 25.png");
+  background-size: contain;
+}
+.post-wrapper .post.vibrance-icon .stem-overlay .icon {
+  background-image: url(images/vibrance.png);
+  background-size: contain;
+}
+.post-wrapper .post.zoo-icon .stem-overlay .icon {
+  background-image: url(images/zoo.png);
+  background-size: contain;
+}
+.post-wrapper .post.heart-icon .stem-overlay .icon {
+  background-image: url(images/heart.png);
+  background-size: contain;
+}
+.post-wrapper .post .stem-overlay {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 60px;
+}
+.post-wrapper .post .stem-overlay .icon {
+  background: transparent no-repeat center center;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+.post-wrapper .post .stem-overlay .stem-mask {
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: transparent url(stem-mask.png) repeat-y top center;
+}
+.post-wrapper .post .post-content {
+  opacity: 0.3;
+  transition-duration: 0.4s;
+  transform: none;
+}
+.post-wrapper .post .post-content .meta {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0px 0px 15px 0px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-delay: 0.2s;
+  transform: translateY(-5px);
+}
+.post-wrapper .post .post-content .post-title {
+  font-size: 32px;
+  line-height: 42px;
+  margin: 0px 0px 15px 0px;
+}
+
+
+.entry-image{
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  width:420px;
+  height:300px;
+  border-radius:10px;
+}
+#under25{
+  background:url("ourimages/25summit1.jpeg");
+  animation:slide 20s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#technovit{
+  background:url("ourimages/technovit.jpeg");
+  animation:technovit 20s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#hackathon{
+  background:url("ourimages/25summit1.jpeg");
+  animation:hackathon 12s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#movie1{
+  background:url("ourimages/25summit1.jpeg");
+  animation:movie 20s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#date{
+  background:url("ourimages/date1.jpg");
+  animation:date 5s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#jan16{
+  background:url("ourimages/Capture.PNG");
+  animation:jan16 40s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#vibrance{
+  background:url("ourimages/vibrance.jpeg");
+  animation:vibrance 30s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#bday{
+  background:url("ourimages/bday1.jpg");
+  animation:bday 12s infinite;
+  background-size:contain;
+  background-color: black;
+  background-position: center;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+#zoo{
+  background:url("ourimages/zoo1.jpg");
+  animation:zoo 12s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#yr1{
+  background:url("ourimages/25summit1.jpeg");
+  animation:yr1 120s infinite;
+  background-size:contain;
+  text-align: center;
+  background-color: black;
+  background-position: center;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+
+/*==========  Media queries  ==========*/
+@media only screen and (max-width: 1080px) {
+  .main-content,
+  .main-content .section-inner {
+    max-width: none;
+  }
+  .stem-wrapper {
+    left: 80px;
+  }
+  .stem-padding,
+  .single-stem-icon {
+    margin: 0px;
+    float: left;
+    margin-left: 50px;
+  }
+  .post-wrapper .post,
+  .post-wrapper .post:nth-child(even),
+  .post-wrapper .post:nth-child(odd) {
+    width: auto;
+    margin-left: 110px;
+    float: none;
+  }
+  .post-wrapper .post .stem-overlay,
+  .post-wrapper .post:nth-child(even) .stem-overlay,
+  .post-wrapper .post:nth-child(odd) .stem-overlay {
+    left: -60px;
+    right: auto;
+  }
+  .post-wrapper .post .post-content {
+    padding: 0px 50px;
+  }
+  .entry-image{
+    widows: 420px;
+    height:300px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .header .page-title {
+    font-size: 40px;
+  }
+  .post-wrapper .post {
+    margin-left: 90px !important;
+  }
+  .post-wrapper .post .post-content {
+    padding: 0 25px;
+  }
+  .stem-wrapper {
+    left: 60px;
+  }
+  .stem-padding,
+  .single-stem-icon {
+    margin-left: 30px;
+  }
+  .entry-image{
+    width:60vw;
+    height:30vh;
+  }
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+
+@keyframes slide{
+  20%{
+    background:url("ourimages/25summit1.jpeg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  40%{
+    background:url("ourimages/25summit2.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  60%{
+    background:url("ourimages/25summit4.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  80%{
+    background:url("ourimages/25summit5.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/25summit1.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+
+@keyframes technovit{
+  20%{
+    background:url("ourimages/technovit1.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  40%{
+    background:url("ourimages/technovit2.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  60%{
+    background:url("ourimages/tecnhovit3.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  80%{
+    background:url("ourimages/technovit4.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/technovit.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes hackathon{
+  33.33%{
+    background:url("ourimages/hackathon2.jpg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  66.66%{
+    background:url("ourimages/hackathon3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/hackathon1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+ 
+}
+
+@keyframes movie{
+  20%{
+    background:url("ourimages/movie2.jpg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  40%{
+    background:url("ourimages/movie3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  60%{
+    background:url("ourimages/movie4.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  80%{
+    background:url("ourimages/movie5.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/movie1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes jan16{
+  25%{
+    background:url("ourimages/Capture1.PNG");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  50%{
+    background:url("ourimages/Capture2.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  75%{
+    background:url("ourimages/Capture3.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/Capture.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes date{
+  50%{
+    background:url("ourimages/date2.jpg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/date1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes vibrance{
+  16.66%{
+    background:url("ourimages/vibrance1.jpg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  33.33%{
+    background:url("ourimages/vibrance2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  49.99%{
+    background:url("ourimages/vibrance3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  66.66%{
+    background:url("ourimages/vibrance4.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  83.33%{
+    background:url("ourimages/vibrance5.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/vibrance.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes bday{
+  33.33%{
+    background:url("ourimages/bday2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  66.66%{
+    background:url("ourimages/bday3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/bday1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes zoo{
+  33.33%{
+    background:url("ourimages/zoo2.jpg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  66.66%{
+    background:url("ourimages/zoo3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/zoo1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
+
+@keyframes yr1{
+  3.33%{
+    background:url("ourimages/last2.jpeg");
+    background-size: contain;
+    object-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  6.66%{
+    background:url("ourimages/last3.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  9.99%{
+    background:url("ourimages/last4.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  13.32%{
+    background:url("ourimages/last5.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  16.65%{
+    background:url("ourimages/last6.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  19.98%{
+    background:url("ourimages/last7.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  23.31%{
+    background:url("ourimages/last8.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  26.64%{
+    background:url("ourimages/last9.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  29.97%{
+    background:url("ourimages/last10.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  33.33%{
+    background:url("ourimages/last11.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  36.66%{
+    background:url("ourimages/last12.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  39.99%{
+    background:url("ourimages/last13.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  43.32%{
+    background:url("ourimages/last14.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  46.65%{
+    background:url("ourimages/last15.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  49.98%{
+    background:url("ourimages/last16.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  53.31%{
+    background:url("ourimages/last17.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  56.64%{
+    background:url("ourimages/last18.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  59.97%{
+    background:url("ourimages/last19.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  63.33%{
+    background:url("ourimages/last20.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  66.66%{
+    background:url("ourimages/last21.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  69.99%{
+    background:url("ourimages/last22.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  73.32%{
+    background:url("ourimages/last23.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  76.65%{
+    background:url("ourimages/last24.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  79.98%{
+    background:url("ourimages/last25.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  83.31%{
+    background:url("ourimages/last26.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  86.64%{
+    background:url("ourimages/last27.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  89.97%{
+    background:url("ourimages/last28.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  93.3%{
+    background:url("ourimages/last29.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  96.63%{
+    background:url("ourimages/last30.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+  100%{
+    background:url("ourimages/last1.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+  }
+}
